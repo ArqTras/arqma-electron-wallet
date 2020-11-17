@@ -1,12 +1,16 @@
 import { diff1, uid, logger } from "./utils"
 
 export class Miner {
-    constructor(pool, id, workerName, varDiff, ip, socket) {
+    constructor(pool, id, agent, workerName, varDiff, ip, socket) {
         this.pool = pool
         this.id = id
         this.workerName = workerName
         this.ip = ip
         this.socket = socket
+        this.proxy = false;
+        if (agent && agent.includes('xmr-node-proxy')) {
+          this.proxy = true;
+        }
 
         this.varDiff = varDiff
         this.difficulty = {
@@ -161,6 +165,10 @@ export class Miner {
             while(this.jobs.length > 4) {
                 this.jobs.shift()
             }
+            if (this.proxy) {
+            newJob.clientPoolLocation = blockTemplate.clientPoolLocation
+            newJob.clientNonceLocation = blockTemplate.clientNonceLocation
+          }
         }
         return { blob, job_id, target, seed_hash, next_seed_hash }
     }
