@@ -19,7 +19,7 @@ jobs:
             - name: Install node
               uses: actions/setup-node@v1
               with:
-                node-version: "12.20.2"
+                node-version: "12.22.6"
             - name: patch node gyp on windows to support Visual Studio 2019
               if: matrix.os == 'windows-latest'
               shell: powershell
