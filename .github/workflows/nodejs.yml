@@ -21,6 +21,7 @@ jobs:
               with:
                 node-version: "12.20.2"
             - name: patch node gyp on windows to support Visual Studio 2019
+              if: matrix.os == 'windows-latest'
               shell: powershell
               run: |
                 npm install --global node-gyp@latest
