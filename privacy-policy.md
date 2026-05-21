@@ -1,5 +1,5 @@
 # ARQMA Privacy Policy
-### Last Modified Date : 02/10/2019
+### Last Modified Date : 05/22/2026
 ### 1. Introduction
 
 This Privacy Policy explains how information about you is collected, used and disclosed by ARQMA ("we" or "us"). This Privacy Policy (together with our Terms of Service and any other documents referred to therein or herein) applies to information we collect when you use our application, or when you otherwise interact with us.
